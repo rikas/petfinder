@@ -1,0 +1,12 @@
+<h1>Missing cat 😿</h1>
+<%= link_to cats_path do %>
+  <i class="fas fa-arrow-left"></i> Back
+<% end %>
+
+<p><%= link_to 'Update cat info', edit_cat_path(@cat) %></p>
+
+<h3>Number of legs: <%= @cat.legs %></h3>
+<h3>Found on: <%= @cat.created_at %></h3>
+
+<p><%= @cat.color.capitalize %> <%= @cat.breed %></p>
+<p><%= @cat.description %></p>

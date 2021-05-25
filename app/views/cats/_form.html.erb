@@ -1,0 +1,12 @@
+<%= simple_form_for @cat do |f| %>
+  <%= f.input :breed %>
+  <%= f.input :color %>
+  <%= f.input :legs %>
+  <%= f.input :description %>
+
+  <% if @cat.persisted? %>
+    <%= f.input :claimed %>
+  <% end %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

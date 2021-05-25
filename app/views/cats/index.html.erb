@@ -1,0 +1,23 @@
+<h1>Missing kitties</h1>
+
+<%= link_to new_cat_path, class: 'btn btn-primary mb-4' do %>
+  <i class="fas fa-plus"></i> Report missing cat
+<% end %>
+
+<ul class="list-unstyled">
+  <% @cats.each do |cat| %>
+    <li>
+      <% if cat.claimed %>
+        <i class="fas fa-check-square"></i>
+      <% else %>
+        <i class="fas fa-square"></i>
+      <% end %>
+
+      <%= link_to cat_path(cat) do %>
+        <strong>
+          <%= cat.color.capitalize %> <%= cat.breed %>
+        </strong>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
